@@ -1,7 +1,7 @@
 import { App, FuzzySuggestModal, TFolder, Notice, Vault, Modal, Instruction } from 'obsidian';
 
 const EMPTY_TEXT = 'No files found to append content. Enter to create a new one.'
-const PLACEHOLDER_TEXT = 'Type file to append to or create';
+const PLACEHOLDER_TEXT = 'Type folder to append to or create';
 const instructions = [
     { command: '↑↓', purpose: 'to navigate' },
     { command: '↵', purpose: 'to choose folder' },
@@ -91,7 +91,7 @@ export class CreateNoteModal extends Modal {
         // create input
         this.inputEl = document.createElement("input");
         this.inputEl.type = "text";
-        this.inputEl.placeholder = "Type filename for new note";
+        this.inputEl.placeholder = "Type name of folder";
         this.inputEl.className = "prompt-input";
 
         // create instructions
@@ -155,7 +155,8 @@ export class CreateNoteModal extends Modal {
 
     async createNewNote(inputName: string): Promise<void> {
         const name = inputName || "Untitled";
-        const fileName = `${this.folder.path}/${name}.md`
+        this.app.vault.createFolder(`${this.folder.path}/${name}`);
+        const fileName = `${this.folder.path}/${name}/${name}.md`
         try {
             // If files exists, throw error
             const fileExists = await this.app.vault.adapter.exists(fileName);

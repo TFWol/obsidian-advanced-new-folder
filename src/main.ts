@@ -8,7 +8,7 @@ export default class AdvancedNewFilePlugin extends Plugin {
 
 		this.addCommand({
 			id: 'advanced-new-file',
-			name: 'Create note',
+			name: 'Create folder',
 			callback: () => {
 				new ChooseFolderModal(this.app).open();
 			}

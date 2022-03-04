@@ -1,18 +1,15 @@
-## Obsidian Advanced New File
+## Obsidian Advanced New Folder
 
-Obsidian Advanced New file is a plugin for [Obsidian](https://obsidian.md/), that provide functionality to choose folder over note creation.
-The new note file is created with `Untitled.md` filename just to provide same behavior as default Obsidian.
+Obsidian Advanced New folder is a plugin for [Obsidian](https://obsidian.md/), that allows you to choose where to create a folder.
+The newly created folder contains a file with the same name as the folder.
 
-The plugin is heavily inspired by [Note refactor](https://github.com/lynchjames/note-refactor-obsidian) amd [similar extension](https://marketplace.visualstudio.com/items?itemName=dkundel.vscode-new-file) for Vs Code.
+The plugin is a fork of [Obsdiain Advanced New File](https://github.com/vanadium23/obsidian-advanced-new-file) with an altered functionality to support creating folders instead of files.
 
 ## Feature
 
-**Hint:** you can set command `advanced new file` to shortcut like `Ctrl/Cmd` + `Alt` + `N`.
+**Hint:** you can set command `advanced new folder` to shortcut like `Ctrl/Cmd` + `Alt` + `N`.
 
-Spawn command `advanced new file` and choose directory.
-
-https://user-images.githubusercontent.com/2872741/138254702-b3e6a9b0-0277-4751-be88-b31607e2090d.mp4
-
+Spawn command `advanced new folder` and choose directory.
 
 
 ### How to develop

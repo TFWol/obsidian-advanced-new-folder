@@ -21,3 +21,8 @@ Spawn command `advanced new folder` and choose directory.
 ### Manually installing the plugin
 
 - Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+
+### Credits
+
+This plugin is a fork of [Obsdiain Advanced New File](https://github.com/vanadium23/obsidian-advanced-new-file) which did not include folder creation.
+All the credits go to the original author.

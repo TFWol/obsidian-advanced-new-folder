@@ -20,9 +20,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it.
+      # Updated to v4 for the latest features and security updates.
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Sets up Node.js for use in the workflow
       - name: Set up Node.js
@@ -38,10 +39,10 @@ jobs:
       - name: Build plugin
         run: npm run build
 
-      # Uploads the built plugin files as an artifact
-      # This makes the files available for download from the workflow run page
+      # Uploads the built plugin files as an artifact.
+      # Updated to v4 for improved performance and new features.
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: obsidian-advanced-new-folder-plugin
           path: |

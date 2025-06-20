@@ -1,0 +1,50 @@
+# GitHub Actions Workflow: Build Obsidian Plugin
+#
+# This workflow automates the process of building the Obsidian plugin.
+# It is triggered manually, allowing you to run it whenever you need
+# to generate the plugin files. The workflow installs Node.js,
+# installs the project dependencies, builds the plugin, and then
+# uploads the essential plugin files (`main.js`, `styles.css`,
+# and `manifest.json`) as a downloadable artifact.
+
+name: Build Obsidian Plugin
+
+# This allows the workflow to be run manually from the Actions tab
+# in your GitHub repository.
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Sets up Node.js for use in the workflow
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Using Node.js version 18, you can adjust if needed
+
+      # Installs the dependencies listed in package.json
+      - name: Install dependencies
+        run: npm install
+
+      # Runs the build script defined in package.json to compile the plugin
+      - name: Build plugin
+        run: npm run build
+
+      # Uploads the built plugin files as an artifact
+      # This makes the files available for download from the workflow run page
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: obsidian-advanced-new-folder-plugin
+          path: |
+            main.js
+            styles.css
+            manifest.json
